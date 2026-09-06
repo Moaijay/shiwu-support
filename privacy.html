@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>食霧 — 隱私權政策與支援</title>
+<style>
+  body { font-family: -apple-system, "PingFang TC", sans-serif; max-width: 680px;
+         margin: 40px auto; padding: 0 20px 60px; line-height: 1.85; color: #3A2E1F; background: #FAF6EF; }
+  h1 { font-size: 1.7em; margin-bottom: 0.2em; }
+  h2 { font-size: 1.25em; margin-top: 2.4em; padding-top: 0.6em; border-top: 1px solid #E4D9C6; }
+  h3 { font-size: 1.05em; margin-top: 1.8em; }
+  p, li { font-size: 1em; }
+  ul { padding-left: 1.4em; }
+  a { color: #A5623A; }
+  .lede { font-size: 1.05em; }
+  .sub { color: #8A7A63; margin-top: 0; }
+  footer { margin-top: 3.5em; color: #8A7A63; font-size: 0.9em; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #F2E8D8; background: #221A12; }
+    h2 { border-top-color: #40331F; }
+    a { color: #E0A472; }
+    .sub, footer { color: #A6957A; }
+  }
+</style>
+</head>
+<body>
+
+<h1>食霧</h1>
+<p class="sub">記錄自己吃過的每一家店和每道菜。</p>
+
+<h2>隱私權政策</h2>
+
+<p class="lede"><strong>「食霧」不收集你的任何資料。</strong></p>
+
+<p>這個 App 沒有帳號、沒有註冊、沒有伺服器、沒有廣告、沒有分析工具、沒有追蹤，也沒有任何第三方追蹤或分析 SDK。你記下的每一家店、每一道菜、每一張照片，都存在你自己的手機裡，開發者無從得知。</p>
+
+<h3>資料存在哪裡</h3>
+<p>所有記錄——店家、每一餐、菜與評價、心得、同行者、想去的店——都存在你這支手機的 App 本機資料庫。照片存在 App 自己的檔案空間（Application Support），資料庫裡只記檔名。偏好設定（常一起吃的人、排序方式、已達成的里程碑）存在本機的 UserDefaults。</p>
+<p>這些資料不會離開你的裝置，除非<strong>你自己</strong>按下匯出。刪除 App 就會一併刪掉這些資料，開發者手上不會留下任何副本。</p>
+
+<h3>定位</h3>
+<p>只有在你記一餐、需要列出附近的店家時，App 才會向你要一次目前位置，用的是<strong>使用 App 期間（When In Use）</strong>的權限。</p>
+<ul>
+  <li>一次只取一次位置，不做連續定位、不在背景取得位置、不做移動追蹤，也沒有任何背景執行模式。</li>
+  <li>精度刻意設在<strong>約 100 公尺</strong>這一級，夠找出你在哪一家店就好。</li>
+  <li>位置只用來在當下找出附近的店家。你選定店家之後，存進記錄的是<strong>那家店的座標</strong>，不是你的座標。</li>
+  <li>例外只有一個：當你自己打店名建立一家系統上找不到的店時，這家店的座標會直接用你當下的位置（約 100 公尺精度）標記。App 在那個畫面上有寫明「自訂店家 · 位置以目前所在標記」。這筆座標一樣只存在你的裝置上。</li>
+  <li>你可以在系統的「設定 → 隱私權與安全性 → 定位服務」隨時關掉。關掉之後 App 仍然可以用，只是要自己搜尋店名。</li>
+</ul>
+
+<h3>照片</h3>
+<p>照片來自你自己從相簿挑選的照片，或當下用相機拍的相片。</p>
+<ul>
+  <li>相簿是透過系統的照片選取器開啟的，<strong>App 只拿得到你選的那幾張</strong>，不會瀏覽你的相簿，也從來沒有要求過相簿的完整讀取權限。</li>
+  <li>選到的照片會縮圖後複製一份到 App 的本機檔案空間，之後在 App 內顯示的是這一份。</li>
+  <li>從相簿補記舊帳時，App 會讀取照片本身帶的拍攝日期與 GPS 座標：日期用來自動帶入那一餐的日期，座標用來找出照片附近有哪些店。這個讀取全部在你的裝置上完成，照片與其中的資訊不會被上傳；照片的 GPS 座標本身不會存進資料庫。</li>
+  <li>App 不會把照片寫回你的相簿。</li>
+</ul>
+
+<h3>地圖</h3>
+<p>地圖畫面、搜尋店家、反查行政區與導航入口，使用的是 Apple 內建的地圖服務（MapKit 與 CoreLocation）。這是 Apple 提供的系統服務，以下三種情況會由系統向 Apple 發出請求：</p>
+<ol>
+  <li>顯示地圖（取得地圖圖磚）。</li>
+  <li>搜尋店家時，你打的字與當時的位置範圍會送給 Apple，用來回傳建議與附近的餐廳清單。</li>
+  <li>你自己建立的店家若缺縣市／行政區資料，該店座標會送給 Apple 換回行政區名稱。</li>
+</ol>
+<p>這些請求由 Apple 處理，受 <a href="https://www.apple.com/legal/privacy/">Apple 的隱私權政策</a>規範。開發者不會收到、也看不到這些請求的內容。</p>
+<p>除此之外，這個 App 不會為了任何理由連上任何伺服器——開發者沒有伺服器。</p>
+
+<h3>備份與匯出</h3>
+<p>App 可以把全部記錄匯出成一個 JSON 檔，或把記錄與照片打包成一個完整備份檔，也可以把備份檔匯入還原。</p>
+<ul>
+  <li>匯出只在<strong>你主動按下</strong>的時候發生。</li>
+  <li>產生的檔案會交給系統的分享面板，存到哪裡、傳給誰，完全由你決定。</li>
+  <li>備份檔沒有密碼保護，內容就是你的記錄與照片，請自行決定要放在哪裡。</li>
+  <li>開發者不會收到這個檔案，也沒有任何自動上傳或雲端同步（App 沒有使用 iCloud 同步）。</li>
+</ul>
+
+<h3>這個 App 沒有的東西</h3>
+<p>沒有帳號系統、沒有登入、沒有廣告、沒有應用程式內分析、沒有崩潰回報服務、沒有推播通知、沒有 App 追蹤透明度（ATT）追蹤、沒有廣告識別碼或任何使用者識別碼、沒有第三方追蹤或分析 SDK，也不會把資料賣給或分享給任何人。</p>
+<p>App 內使用的唯一第三方程式碼是開源壓縮函式庫 ZIPFoundation（MIT 授權），只用來產生與讀取備份檔，不會連上網路。</p>
+
+<h3>兒童</h3>
+<p>這個 App 不針對兒童設計，也不會刻意收集任何人的資料（包含兒童）。</p>
+
+<h3>圖資來源與授權</h3>
+<p>App 內建的村里界線與水域圖資來自：</p>
+<ul>
+  <li>內政部國土測繪中心「<strong>村(里)界圖(TWD97經緯度)</strong>」（圖資日期 2026-08-17）</li>
+  <li>內政部國土測繪中心「<strong>經建版地形圖數值資料檔(比例尺二萬五千分之一)</strong>」</li>
+</ul>
+<p>兩者均依「<strong>政府資料開放授權條款第 1 版</strong>」提供，本 App 依該條款標示出處使用，並對原始圖資做過簡化處理。這些圖資已內建在 App 裡，使用時不需要連線取得。</p>
+
+<h3>政策變更</h3>
+<p>這份政策若有變更，會直接更新本頁並修改頁尾的最後更新日期。</p>
+
+<h2>Privacy Policy (English)</h2>
+
+<p class="lede"><strong>Shiwu does not collect any of your data.</strong></p>
+
+<p>There is no account, no sign-up, no server, no ads, no analytics, no tracking, and no third-party tracking or analytics SDKs. Every place, dish, note and photo you record stays on your own device. The developer has no way to see any of it.</p>
+
+<h3>Where your data lives</h3>
+<p>All of your records — places, meals, dishes and ratings, notes, companions, wishlist entries — are stored in the app's local database on your device. Photos are stored in the app's own file storage (Application Support); the database only keeps file names. Preferences (frequent dining companions, sort order, milestones reached) are stored locally in UserDefaults.</p>
+<p>None of this leaves your device unless <strong>you</strong> choose to export it. Deleting the app deletes this data. The developer keeps no copy.</p>
+
+<h3>Location</h3>
+<p>The app asks for your location only when you are logging a meal and it needs to list nearby restaurants. It uses <strong>When In Use</strong> authorization only.</p>
+<ul>
+  <li>It takes a single location fix at that moment. No continuous location updates, no background location access, no movement tracking, and no background execution modes at all.</li>
+  <li>Accuracy is deliberately set to roughly <strong>100 metres</strong> — enough to work out which restaurant you are in.</li>
+  <li>Your location is used at that moment to find nearby places. Once you pick a place, what gets saved with the record is <strong>that place's coordinates</strong>, not yours.</li>
+  <li>There is one exception: if you type in a place the map service doesn't know, that place is marked at your current location (at the same ~100 m accuracy). The app says so on screen. Those coordinates also stay on your device.</li>
+  <li>You can turn location off at any time in Settings › Privacy &amp; Security › Location Services. The app still works; you just search for places by name instead.</li>
+</ul>
+
+<h3>Photos</h3>
+<ul>
+  <li>The photo library is opened through the system picker, so <strong>the app only receives the images you select</strong>. It does not browse your library and has never requested full photo library access.</li>
+  <li>Selected images are resized and copied into the app's own local storage, and displayed from there.</li>
+  <li>When you back-date an older meal from a picked photo, the app reads that photo's own capture date and GPS coordinates: the date pre-fills the meal's date, and the coordinates are used to look up nearby places. This happens entirely on your device. Neither the photo nor that information is uploaded, and the photo's GPS coordinates are not stored in the database.</li>
+  <li>The app does not write photos back to your photo library.</li>
+</ul>
+
+<h3>Maps</h3>
+<p>Map display, place search, administrative-district lookup and the navigation hand-off use Apple's built-in map services (MapKit and CoreLocation). Three things cause the system to send a request to Apple:</p>
+<ol>
+  <li>Displaying the map (fetching map tiles).</li>
+  <li>Searching for a place — what you type, along with the current map region, is sent to Apple to return suggestions and a list of nearby restaurants.</li>
+  <li>A place you created yourself that lacks city/district information — its coordinates are sent to Apple to get the district name back.</li>
+</ol>
+<p>These requests are handled by Apple and are governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. The developer neither receives nor sees them. Apart from that, the app does not connect to any server for any reason — the developer operates none.</p>
+
+<h3>Backup and export</h3>
+<ul>
+  <li>Export happens only when <strong>you</strong> tap it.</li>
+  <li>The resulting file is handed to the system share sheet. Where it goes and who gets it is entirely your decision.</li>
+  <li>Backup files are not password-protected — they contain your records and photos, so store them where you are comfortable.</li>
+  <li>The developer never receives the file. There is no automatic upload and no cloud sync (the app does not use iCloud sync).</li>
+</ul>
+
+<h3>What this app does not have</h3>
+<p>No accounts, no login, no advertising, no in-app analytics, no crash-reporting service, no push notifications, no App Tracking Transparency tracking, no advertising identifier or any user identifier, no third-party tracking or analytics SDKs, and no selling or sharing of data with anyone.</p>
+<p>The only third-party code in the app is the open-source compression library ZIPFoundation (MIT licence), used solely to write and read backup files. It makes no network connections.</p>
+
+<h3>Children</h3>
+<p>This app is not directed at children, and it does not knowingly collect data from anyone, children included.</p>
+
+<h3>Map data sources and licence</h3>
+<p>The village-boundary and water-body data bundled with the app comes from Taiwan's Ministry of the Interior, National Land Surveying and Mapping Center: the <strong>Village (Li) Boundary Map, TWD97</strong> (data dated 2026-08-17) and the <strong>Topographic Map Digital Data, 1:25,000</strong>. Both are provided under the <strong>Open Government Data License, Taiwan, version 1.0</strong>, and are used with attribution under that licence; the boundary geometry has been simplified for use in the app. The data is bundled in the app; no network access is needed to use it.</p>
+
+<h2>支援 · Support</h2>
+<p>使用上有任何問題，或想反映什麼，來信：<a href="mailto:moaijay@gmail.com">moaijay@gmail.com</a></p>
+<p>Questions or feedback: <a href="mailto:moaijay@gmail.com">moaijay@gmail.com</a></p>
+
+<footer>最後更新：2026 年 9 月 · Last updated: September 2026</footer>
+
+</body>
+</html>
