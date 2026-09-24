@@ -42,25 +42,11 @@
 <h3>定位</h3>
 <p>只有在你記一餐、需要列出附近的店家時，App 才會向你要一次目前位置，用的是<strong>使用 App 期間（When In Use）</strong>的權限。</p>
 <ul>
-  <li>一次只取一次位置，不做連續定位、不做移動追蹤，也沒有任何背景執行模式。背景取得位置只有在你自己打開「停留提醒」之後才會發生，說明在下一節。</li>
+  <li>一次只取一次位置，不做連續定位、不做移動追蹤，也沒有任何背景執行模式，App 不會在背景取得位置。</li>
   <li>精度刻意設在<strong>約 100 公尺</strong>這一級，夠找出你在哪一家店就好。</li>
   <li>位置只用來在當下找出附近的店家。你選定店家之後，存進記錄的是<strong>那家店的座標</strong>，不是你的座標。</li>
   <li>例外只有一個：當你自己打店名建立一家系統上找不到的店時，這家店的座標會直接用你當下的位置（約 100 公尺精度）標記。App 在那個畫面上有寫明「自訂店家 · 位置以目前所在標記」。這筆座標一樣只存在你的裝置上。</li>
   <li>在系統的「設定 → 隱私權與安全性 → 定位服務」可以關掉。關掉之後 App 仍然可以用，只是要自己搜尋店名。</li>
-</ul>
-
-<h3>停留提醒（選用）</h3>
-<p>這個功能<strong>預設是關的</strong>。沒有打開之前，App 不會建立任何背景的位置監聽。</p>
-<p>打開之後：</p>
-<ul>
-  <li>用的是系統的三種機制，都由系統判斷、由系統把 App 叫醒：<strong>造訪偵測</strong>（Visit Monitoring，停留與離開由系統判斷）、<strong>顯著位置變更</strong>（走遠了才叫醒 App）、<strong>店家範圍偵測</strong>（進出想去清單與常去店家周圍 80 公尺的範圍時叫醒 App，同時最多 20 家）。App 本身不進行連續定位、也不記錄你的移動路線。</li>
-  <li>到達一個地方時 App 會取<strong>一次</strong>位置（高精度，最多等 20 秒），用來判斷你在哪一家店。造訪偵測給的座標常常有一百公尺以上的誤差。</li>
-  <li>需要<strong>永遠允許（Always）</strong>的定位權限與通知權限。任一項沒有取得，開關就會回到關閉。</li>
-  <li>判斷你離開的依據有三種：造訪偵測的離開事件、離停留地點至少 150 公尺的位置變更（定位誤差大時跟著放寬）、走出店家範圍。收到之後 App 會在你的裝置上判斷要不要問你一句：停留時間是否落在 15 分鐘到 4 小時之間、當時附近有沒有餐飲店家、那段時間你是不是已經自己記過一餐、當天問過幾次，以及是不是深夜。</li>
-  <li>查詢附近店家會送出<strong>那次停留的座標</strong>給 Apple 地圖服務，用途與記錄流程的附近清單相同（見「地圖」一節）。查詢結果不會離開你的裝置。</li>
-  <li>通知會問你要不要記下這一餐。<strong>按了通知只是把記錄表單填好，並不會建立任何記錄。</strong></li>
-  <li>App 在裝置上保留的有：這個開關的狀態、今天問過幾次、<strong>最近 40 次</strong>停留的辨識碼（座標取到小數第四位、時間取到分鐘），用來避免同一次停留問你兩遍；還沒問完的停留（到達時間、座標與查到的候選店家）最多留 12 筆、24 小時；最後一次位置更新的經緯度一組，用來決定該在哪幾家店周圍畫範圍；以及最近 300 筆事件紀錄（到達、離開、位置更新、進出範圍、通知），每一筆帶有當時的座標與定位誤差，用來查這個功能有沒有算錯。這些都存在你的裝置上，不會離開，也不會寫進你的記錄。</li>
-  <li>在 App 的「設定 → 提醒」可以關掉；關掉之後所有位置監聽都會停止。</li>
 </ul>
 
 <h3>照片</h3>
@@ -122,25 +108,11 @@
 <h3>Location</h3>
 <p>The app asks for your location only when you are logging a meal and it needs to list nearby restaurants. It uses <strong>When In Use</strong> authorization only.</p>
 <ul>
-  <li>It takes a single location fix at that moment. No continuous location updates, no movement tracking, and no background execution modes at all. Background location access happens only if you turn on Dwell Reminders yourself &mdash; see the next section.</li>
+  <li>It takes a single location fix at that moment. No continuous location updates, no movement tracking, and no background execution modes at all. The app never accesses your location in the background.</li>
   <li>Accuracy is deliberately set to roughly <strong>100 metres</strong> — enough to work out which restaurant you are in.</li>
   <li>Your location is used at that moment to find nearby places. Once you pick a place, what gets saved with the record is <strong>that place's coordinates</strong>, not yours.</li>
   <li>There is one exception: if you type in a place the map service doesn't know, that place is marked at your current location (at the same ~100 m accuracy). The app says so on screen. Those coordinates also stay on your device.</li>
   <li>Location can be turned off in Settings › Privacy &amp; Security › Location Services. The app still works; you just search for places by name instead.</li>
-</ul>
-
-<h3>Dwell Reminders (optional)</h3>
-<p>This feature is <strong>off by default</strong>. Until you turn it on, the app creates no background location monitoring of any kind.</p>
-<p>Once it is on:</p>
-<ul>
-  <li>It uses three system services, all of which decide on their own when to wake the app: <strong>Visit Monitoring</strong> (the system decides when you have arrived and left), <strong>significant-change location monitoring</strong> (the app is woken once you have moved far enough), and <strong>region monitoring</strong> around the places on your wishlist and the ones you log most often (80 m circles, at most 20 at a time). The app does not run continuous location updates and does not record your movement.</li>
-  <li>When you arrive somewhere, the app takes <strong>one</strong> high-accuracy location fix (it waits at most 20 seconds) to work out which place you are at. The coordinates that Visit Monitoring reports are often off by more than a hundred metres.</li>
-  <li>It requires <strong>Always</strong> location authorization and notification permission. If either is refused, the switch returns to off.</li>
-  <li>Three things can tell the app you have left: a departure from Visit Monitoring, a location change at least 150 m from where you stopped (further when the location accuracy is poor), or leaving one of those place circles. It then decides on your device whether to ask you anything at all: whether the stay lasted between 15 minutes and 4 hours, whether there were food places nearby, whether you already logged a meal during that time, how many times it has asked today, and whether it is the middle of the night.</li>
-  <li>Looking up nearby places sends <strong>that visit's coordinates</strong> to Apple's map service, for the same purpose as the nearby list when you log a meal (see &ldquo;Maps&rdquo;). The results do not leave your device.</li>
-  <li>The notification asks whether you want to log the meal. <strong>Tapping it only pre-fills the logging form; it does not create a record.</strong></li>
-  <li>What the app keeps on the device: the switch's state, how many times it has asked today, identifiers for the <strong>last 40</strong> visits (coordinates rounded to four decimals, time rounded down to the minute) so that the same visit is not raised twice, up to 12 open stays for at most 24 hours (arrival time, coordinates and the nearby places found), one pair of coordinates from the most recent location update (used to decide which places to draw circles around), and the last 300 events (arrivals, departures, location updates, region crossings, notifications), each carrying the coordinates and location accuracy at the time, used to check the feature's own reasoning. None of this leaves your device or is written into your records.</li>
-  <li>It can be turned off in the app under Settings &rsaquo; Reminders. Turning it off stops all location monitoring.</li>
 </ul>
 
 <h3>Photos</h3>
