@@ -36,33 +36,36 @@
 <p>這個 App 沒有帳號、沒有註冊、沒有伺服器、沒有廣告、沒有分析工具、沒有追蹤，也沒有任何第三方追蹤或分析 SDK。你記下的每一家店、每一道菜、每一張照片，都存在你自己的手機裡，開發者無從得知。</p>
 
 <h3>資料存在哪裡</h3>
-<p>所有記錄——店家、每一餐、菜與評價、心得、同行者、想去的店——都存在你這支手機的 App 本機資料庫。照片存在 App 自己的檔案空間（Application Support），資料庫裡只記檔名。偏好設定（常一起吃的人、排序方式、已達成的里程碑）存在本機的 UserDefaults。</p>
+<p>所有記錄——店家與評分、每一餐、點了什麼、菜的評價與價錢份數、心得、同行者、菜單、想去的店——都存在你這支手機的 App 本機資料庫。照片（食物、菜單）存在 App 自己的檔案空間（Application Support），資料庫裡只記檔名。偏好設定（常一起吃的人、排序方式、已達成的里程碑）存在本機的 UserDefaults。</p>
 <p>這些資料不會離開你的裝置，除非<strong>你自己</strong>按下匯出。刪除 App 就會一併刪掉這些資料，開發者手上不會留下任何副本。</p>
 
 <h3>定位</h3>
-<p>只有在你記一餐、需要列出附近的店家時，App 才會向你要一次目前位置，用的是<strong>使用 App 期間（When In Use）</strong>的權限。</p>
+<p>第一次打開 App 時，會詢問<strong>使用 App 期間（When In Use）</strong>的定位權限。位置用在兩件事：地圖上用藍點顯示你在哪裡，以及記一餐時列出附近的店家。</p>
 <ul>
-  <li>一次只取一次位置，不做連續定位、不做移動追蹤，也沒有任何背景執行模式，App 不會在背景取得位置。</li>
-  <li>精度刻意設在<strong>約 100 公尺</strong>這一級，夠找出你在哪一家店就好。</li>
-  <li>位置只用來在當下找出附近的店家。你選定店家之後，存進記錄的是<strong>那家店的座標</strong>，不是你的座標。</li>
-  <li>例外只有一個：當你自己打店名建立一家系統上找不到的店時，這家店的座標會直接用你當下的位置（約 100 公尺精度）標記。App 在那個畫面上有寫明「自訂店家 · 位置以目前所在標記」。這筆座標一樣只存在你的裝置上。</li>
-  <li>在系統的「設定 → 隱私權與安全性 → 定位服務」可以關掉。關掉之後 App 仍然可以用，只是要自己搜尋店名。</li>
+  <li>地圖畫面開著時，系統會持續更新藍點的位置。</li>
+  <li>列附近的店家時，App 取一次目前位置，精度約 <strong>100 公尺</strong>。</li>
+  <li>App 沒有背景執行模式。離開 App 之後，App 不會取得位置。</li>
+  <li>你選定店家之後，存進記錄的是<strong>那家店的座標</strong>，不是你的座標。</li>
+  <li>自己建立一家地圖上找不到的店時，可以把它標在現在的位置、照片拍攝的位置，或地圖上自己點的位置。標在現在的位置時，存的就是你當下的座標（約 100 公尺精度）。畫面上會寫出這家店標在哪裡。這筆座標只存在你的裝置上。</li>
+  <li>在系統的「設定 → 隱私權與安全性 → 定位服務」可以關掉。關掉之後 App 一樣能用，店家要自己搜尋，地圖上也不會有藍點。</li>
 </ul>
 
 <h3>照片</h3>
-<p>照片來自你自己從相簿挑選的照片，或當下用相機拍的相片。</p>
+<p>照片來自你從相簿挑的照片，或用相機當下拍的照片，包括食物和菜單。</p>
 <ul>
   <li>相簿是透過系統的照片選取器開啟的，<strong>App 只拿得到你選的那幾張</strong>，不會瀏覽你的相簿，也從來沒有要求過相簿的完整讀取權限。</li>
   <li>選到的照片會縮圖後複製一份到 App 的本機檔案空間，之後在 App 內顯示的是這一份。</li>
-  <li>從相簿補記舊帳時，App 會讀取照片本身帶的拍攝日期與 GPS 座標：日期用來自動帶入那一餐的日期，座標用來找出照片附近有哪些店。這個讀取全部在你的裝置上完成，照片與其中的資訊不會被上傳；照片的 GPS 座標本身不會存進資料庫。</li>
-  <li>App 不會把照片寫回你的相簿。</li>
+  <li>從相簿補記舊帳時，App 會讀取照片本身帶的拍攝日期與 GPS 座標：日期用來自動帶入那一餐的日期，座標用來找出照片附近有哪些店。這個讀取全部在你的裝置上完成，照片與其中的資訊不會被上傳。照片的 GPS 座標不會存進資料庫；只有你把自訂店家標在照片的位置時，那個座標會成為這家店的座標。</li>
+  <li>App 不會把你的照片寫回相簿。分享卡可以從分享面板存進相簿，第一次存時系統會詢問「加入照片」的權限。</li>
 </ul>
 
 <h3>地圖</h3>
-<p>地圖畫面、搜尋店家、反查行政區與導航入口，使用的是 Apple 內建的地圖服務（MapKit 與 CoreLocation）。這是 Apple 提供的系統服務，以下三種情況會由系統向 Apple 發出請求：</p>
+<p>地圖畫面、附近的店家、搜尋店家、地圖上點店、反查行政區與導航入口，使用的是 Apple 內建的地圖服務（MapKit 與 CoreLocation）。店名、地址、類別這些店家資料來自 Apple 地圖。以下幾種情況會由系統向 Apple 發出請求：</p>
 <ol>
   <li>顯示地圖（取得地圖圖磚）。</li>
-  <li>搜尋店家時，你打的字與當時的位置範圍會送給 Apple，用來回傳建議與附近的餐廳清單。</li>
+  <li>列附近的店家時，你目前的位置會送給 Apple，換回附近的餐廳清單。</li>
+  <li>搜尋店家時，你打的字與當時的位置範圍會送給 Apple，換回建議與店家清單。</li>
+  <li>在地圖上點一家店時，系統會向 Apple 查這家店的地址與行政區。</li>
   <li>你自己建立的店家若缺縣市／行政區資料，該店座標會送給 Apple 換回行政區名稱。</li>
 </ol>
 <p>這些請求由 Apple 處理，受 <a href="https://www.apple.com/legal/privacy/">Apple 的隱私權政策</a>規範。開發者不會收到、也看不到這些請求的內容。</p>
@@ -102,32 +105,36 @@
 <p>There is no account, no sign-up, no server, no ads, no analytics, no tracking, and no third-party tracking or analytics SDKs. Every place, dish, note and photo you record stays on your own device. The developer has no way to see any of it.</p>
 
 <h3>Where your data lives</h3>
-<p>All of your records — places, meals, dishes and ratings, notes, companions, wishlist entries — are stored in the app's local database on your device. Photos are stored in the app's own file storage (Application Support); the database only keeps file names. Preferences (frequent dining companions, sort order, milestones reached) are stored locally in UserDefaults.</p>
+<p>All of your records — places and their ratings, meals, what you ordered, dish ratings with prices and portions, notes, companions, menus, wishlist entries — are stored in the app's local database on your device. Photos (food and menus) are stored in the app's own file storage (Application Support); the database only keeps file names. Preferences (frequent dining companions, sort order, milestones reached) are stored locally in UserDefaults.</p>
 <p>None of this leaves your device unless <strong>you</strong> choose to export it. Deleting the app deletes this data. The developer keeps no copy.</p>
 
 <h3>Location</h3>
-<p>The app asks for your location only when you are logging a meal and it needs to list nearby restaurants. It uses <strong>When In Use</strong> authorization only.</p>
+<p>On first launch the app asks for <strong>When In Use</strong> location access. Your location is used for two things: showing where you are on the map (the blue dot), and listing nearby restaurants when you log a meal.</p>
 <ul>
-  <li>It takes a single location fix at that moment. No continuous location updates, no movement tracking, and no background execution modes at all. The app never accesses your location in the background.</li>
-  <li>Accuracy is deliberately set to roughly <strong>100 metres</strong> — enough to work out which restaurant you are in.</li>
-  <li>Your location is used at that moment to find nearby places. Once you pick a place, what gets saved with the record is <strong>that place's coordinates</strong>, not yours.</li>
-  <li>There is one exception: if you type in a place the map service doesn't know, that place is marked at your current location (at the same ~100 m accuracy). The app says so on screen. Those coordinates also stay on your device.</li>
-  <li>Location can be turned off in Settings › Privacy &amp; Security › Location Services. The app still works; you just search for places by name instead.</li>
+  <li>While the map is on screen, the system keeps the blue dot up to date.</li>
+  <li>To list nearby restaurants, the app takes one location fix at roughly <strong>100 metres</strong> accuracy.</li>
+  <li>The app has no background modes. It does not get your location after you leave the app.</li>
+  <li>Once you pick a place, what gets saved with the record is <strong>that place's coordinates</strong>, not yours.</li>
+  <li>When you create a place the map doesn't know, you can mark it at your current location, at the location where a photo was taken, or at a spot you pick on the map. If you mark it at your current location, your coordinates at that moment (~100 m accuracy) become the place's coordinates. The screen shows where the place is marked. Those coordinates stay on your device.</li>
+  <li>Location can be turned off in Settings › Privacy &amp; Security › Location Services. The app still works; you search for places by name, and the map shows no blue dot.</li>
 </ul>
 
 <h3>Photos</h3>
+<p>Photos come from images you pick from your library, or photos you take with the camera, including food and menus.</p>
 <ul>
   <li>The photo library is opened through the system picker, so <strong>the app only receives the images you select</strong>. It does not browse your library and has never requested full photo library access.</li>
   <li>Selected images are resized and copied into the app's own local storage, and displayed from there.</li>
-  <li>When you back-date an older meal from a picked photo, the app reads that photo's own capture date and GPS coordinates: the date pre-fills the meal's date, and the coordinates are used to look up nearby places. This happens entirely on your device. Neither the photo nor that information is uploaded, and the photo's GPS coordinates are not stored in the database.</li>
-  <li>The app does not write photos back to your photo library.</li>
+  <li>When you back-date an older meal from a picked photo, the app reads that photo's own capture date and GPS coordinates: the date pre-fills the meal's date, and the coordinates are used to look up nearby places. This happens entirely on your device. Neither the photo nor that information is uploaded. The photo's GPS coordinates are not stored in the database, unless you mark a place you created at the photo's location; then those coordinates become the place's coordinates.</li>
+  <li>The app does not write your photos back to your library. You can save a share card to Photos from the share sheet; the first time, the system asks for permission to add photos.</li>
 </ul>
 
 <h3>Maps</h3>
-<p>Map display, place search, administrative-district lookup and the navigation hand-off use Apple's built-in map services (MapKit and CoreLocation). Three things cause the system to send a request to Apple:</p>
+<p>Map display, nearby restaurants, place search, tapping a place on the map, administrative-district lookup and the navigation hand-off use Apple's built-in map services (MapKit and CoreLocation). Place details such as name, address and category come from Apple Maps. These cause the system to send a request to Apple:</p>
 <ol>
   <li>Displaying the map (fetching map tiles).</li>
-  <li>Searching for a place — what you type, along with the current map region, is sent to Apple to return suggestions and a list of nearby restaurants.</li>
+  <li>Listing nearby restaurants — your current location is sent to Apple to get a list of nearby places.</li>
+  <li>Searching for a place — what you type, along with the current map region, is sent to Apple to return suggestions and matching places.</li>
+  <li>Tapping a place on the map — the system asks Apple for that place's address and district.</li>
   <li>A place you created yourself that lacks city/district information — its coordinates are sent to Apple to get the district name back.</li>
 </ol>
 <p>These requests are handled by Apple and are governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. The developer neither receives nor sees them. Apart from that, the app does not connect to any server for any reason — the developer operates none.</p>
@@ -154,7 +161,7 @@
 <p>使用上有任何問題，或想反映什麼，來信：<a href="mailto:moaijay@gmail.com">moaijay@gmail.com</a></p>
 <p>Questions or feedback: <a href="mailto:moaijay@gmail.com">moaijay@gmail.com</a></p>
 
-<footer>最後更新：2026 年 9 月 · Last updated: September 2026</footer>
+<footer>最後更新：2026 年 11 月 16 日 · Last updated: November 16, 2026</footer>
 
 </body>
 </html>
