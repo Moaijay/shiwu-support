@@ -67,6 +67,7 @@
   <li>搜尋店家時，你打的字與當時的位置範圍會送給 Apple，換回建議與店家清單。</li>
   <li>在地圖上點一家店時，系統會向 Apple 查這家店的地址與行政區。</li>
   <li>你自己建立的店家若缺縣市／行政區資料，該店座標會送給 Apple 換回行政區名稱。</li>
+  <li>從 Google 地圖匯入時，檔案裡每個地點的名稱（沒有名稱時用地址）與大約的位置範圍會一筆一筆送給 Apple，換回對應的店家；Apple 地圖上找不到、但檔案裡有座標的地點，該座標會送給 Apple 換回行政區名稱。</li>
 </ol>
 <p>這些請求由 Apple 處理，受 <a href="https://www.apple.com/legal/privacy/">Apple 的隱私權政策</a>規範。開發者不會收到、也看不到這些請求的內容。</p>
 <p>除此之外，這個 App 不會為了任何理由連上任何伺服器——開發者沒有伺服器。</p>
@@ -79,10 +80,11 @@
   <li>備份檔沒有密碼保護，內容就是你的記錄與照片，請自行決定要放在哪裡。</li>
   <li>開發者不會收到這個檔案，也沒有任何自動上傳或雲端同步（App 沒有使用 iCloud 同步）。</li>
 </ul>
+<p>App 也可以從 Google 地圖匯出的檔案（Google Takeout 的已儲存清單、加星號的地點、評論）匯入成「想去」的店。檔案是你自己用系統的檔案選擇器挑的，只在你的裝置上讀取，不會上傳；整包的壓縮檔裡，App 會打開每一個 CSV 與 JSON 檔看它是不是 Google 地圖的清單或地點檔，只使用這兩種檔裡的地點；照片等其他種類的檔不打開。最後只存你勾選的地點，其他內容不使用、也不儲存。查店家的部分見上面「地圖」第 6 點。</p>
 
 <h3>這個 App 沒有的東西</h3>
 <p>沒有帳號系統、沒有登入、沒有廣告、沒有應用程式內分析、沒有崩潰回報服務、沒有推播通知、沒有 App 追蹤透明度（ATT）追蹤、沒有廣告識別碼或任何使用者識別碼、沒有第三方追蹤或分析 SDK，也不會把資料賣給或分享給任何人。</p>
-<p>App 內使用的唯一第三方程式碼是開源壓縮函式庫 ZIPFoundation（MIT 授權），只用來產生與讀取備份檔，不會連上網路。</p>
+<p>App 內使用的唯一第三方程式碼是開源壓縮函式庫 ZIPFoundation（MIT 授權），只用來產生與讀取備份檔、讀取 Google 匯出的壓縮檔，不會連上網路。</p>
 
 <h3>兒童</h3>
 <p>這個 App 不針對兒童設計，也不會刻意收集任何人的資料（包含兒童）。</p>
@@ -136,6 +138,7 @@
   <li>Searching for a place — what you type, along with the current map region, is sent to Apple to return suggestions and matching places.</li>
   <li>Tapping a place on the map — the system asks Apple for that place's address and district.</li>
   <li>A place you created yourself that lacks city/district information — its coordinates are sent to Apple to get the district name back.</li>
+  <li>Importing from Google Maps — each place's name (or its address when it has no name) and an approximate area are sent to Apple, one at a time, to find the matching place. For a place Apple Maps does not know but the file gives coordinates for, those coordinates are sent to Apple to get the district name back.</li>
 </ol>
 <p>These requests are handled by Apple and are governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. The developer neither receives nor sees them. Apart from that, the app does not connect to any server for any reason — the developer operates none.</p>
 
@@ -146,10 +149,11 @@
   <li>Backup files are not password-protected — they contain your records and photos, so store them where you are comfortable.</li>
   <li>The developer never receives the file. There is no automatic upload and no cloud sync (the app does not use iCloud sync).</li>
 </ul>
+<p>The app can also import a Google Maps export (Google Takeout saved lists, starred places and reviews) as places you want to try. You pick the file yourself through the system file picker; it is read only on your device and never uploaded. In a full archive, the app opens every CSV and JSON file to check whether it is a Google Maps list or place file, and uses only the places in those files; other kinds of files, such as photos, are not opened. Only the places you select are saved; nothing else from the archive is used or stored. For the place lookups, see item 6 under Maps.</p>
 
 <h3>What this app does not have</h3>
 <p>No accounts, no login, no advertising, no in-app analytics, no crash-reporting service, no push notifications, no App Tracking Transparency tracking, no advertising identifier or any user identifier, no third-party tracking or analytics SDKs, and no selling or sharing of data with anyone.</p>
-<p>The only third-party code in the app is the open-source compression library ZIPFoundation (MIT licence), used solely to write and read backup files. It makes no network connections.</p>
+<p>The only third-party code in the app is the open-source compression library ZIPFoundation (MIT licence), used solely to write and read backup files and to read Google export archives. It makes no network connections.</p>
 
 <h3>Children</h3>
 <p>This app is not directed at children, and it does not knowingly collect data from anyone, children included.</p>
@@ -161,7 +165,7 @@
 <p>使用上有任何問題，或想反映什麼，來信：<a href="mailto:moaijay@gmail.com">moaijay@gmail.com</a></p>
 <p>Questions or feedback: <a href="mailto:moaijay@gmail.com">moaijay@gmail.com</a></p>
 
-<footer>最後更新：2026 年 11 月 16 日 · Last updated: November 16, 2026</footer>
+<footer>最後更新：2026 年 11 月 18 日 · Last updated: November 18, 2026</footer>
 
 </body>
 </html>
